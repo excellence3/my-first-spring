@@ -34,5 +34,16 @@ public class App {
         
         System.out.println(myCoach2.getDailyWorkout());
         contextDIConstructor.close();
+
+        // implemento la DI tramite setter injection
+        System.out.println("#######################");
+        ClassPathXmlApplicationContext contextDISetter =
+                new ClassPathXmlApplicationContext("applicationContextDISetter.xml");
+        
+        Coach myCoach3 =
+                contextDISetter.getBean("myDICoach", Coach.class);
+        
+        System.out.println(myCoach3.getDailyWorkout());
+        contextDISetter.close();
     }
 }
