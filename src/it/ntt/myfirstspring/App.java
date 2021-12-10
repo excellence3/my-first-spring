@@ -52,7 +52,7 @@ public class App {
         contextDISetter.close();
 
         // utilizzo annotations
-        System.out.println("##########Annotations#############");
+        System.out.println("##########Setter Annotation 1#############");
         ClassPathXmlApplicationContext contextAnnotations = 
                 new ClassPathXmlApplicationContext("applicationContextAnnotations.xml");
 
@@ -60,6 +60,11 @@ public class App {
 
 
         System.out.println(myCoach4.getDailyWorkout());
+
+        System.out.println("##########Setter Annotation 2#############");
+        Coach myCoach5 = contextAnnotations.getBean("soccerCoach", Coach.class);
+
+        System.out.println(myCoach5.getDailyWorkout());
 
         contextAnnotations.close();
                 
