@@ -61,7 +61,7 @@ public class App {
 
         System.out.println(myCoach4.getDailyWorkout());
 
-        System.out.println("##########Setter Annotation 2#############");
+        System.out.println("##########Field injection Annotation#############");
         Coach myCoach5 = contextAnnotations.getBean("soccerCoach", Coach.class);
 
         System.out.println(myCoach5.getDailyWorkout());
