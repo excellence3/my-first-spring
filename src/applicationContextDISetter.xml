@@ -7,12 +7,16 @@
 	  
     <bean 
         id="myDICoach"
+        init-method="doInitStuffs"
+        destroy-method="doDestoyStuffs"
         class="it.ntt.myfirstspring.TennisCoach">
       <property name="fortuneService" ref="myFortuneService"></property>
     </bean>
 
     <bean 
         id="myFortuneService"
+        init-method="doInitStuffs"
+        destroy-method="doDestoyStuffs"
         class="it.ntt.myfirstspring.OtherFortune">
     </bean>
 	

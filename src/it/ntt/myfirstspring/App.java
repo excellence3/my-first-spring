@@ -31,7 +31,7 @@ public class App {
         
         Coach myCoach2 = 
                 contextDIConstructor.getBean("myDICoach", Coach.class);
-        
+
         System.out.println(myCoach2.getDailyWorkout());
         contextDIConstructor.close();
 
@@ -40,10 +40,16 @@ public class App {
         ClassPathXmlApplicationContext contextDISetter =
                 new ClassPathXmlApplicationContext("applicationContextDISetter.xml");
         
+        System.out.println("Getting bean..");
         Coach myCoach3 =
                 contextDISetter.getBean("myDICoach", Coach.class);
         
         System.out.println(myCoach3.getDailyWorkout());
+
+        // utilizzo init e destroy methods
+        System.out.println("##########Closing context...#############");
+        
         contextDISetter.close();
+
     }
 }

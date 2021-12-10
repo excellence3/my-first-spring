@@ -13,5 +13,13 @@ public class TennisCoach implements Coach{
     public void setFortuneService (FortuneService fortuneService){
         this.fortuneService = fortuneService;
     }
+
+    public void doInitStuffs(){
+        System.out.println("Initializing Tennis Coach...");
+    }
+
+    public void doDestoyStuffs(){
+        System.out.println("Destroying Tennis Coach...");
+    }
     
 }
