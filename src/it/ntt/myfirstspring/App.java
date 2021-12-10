@@ -51,5 +51,17 @@ public class App {
         
         contextDISetter.close();
 
+        // utilizzo annotations
+        System.out.println("##########Annotations#############");
+        ClassPathXmlApplicationContext contextAnnotations = 
+                new ClassPathXmlApplicationContext("applicationContextAnnotations.xml");
+
+        Coach myCoach4 = contextAnnotations.getBean("tennisCoach", Coach.class);
+
+
+        System.out.println(myCoach4.getDailyWorkout());
+
+        contextAnnotations.close();
+                
     }
 }
