@@ -1,6 +1,9 @@
 package it.ntt.myfirstspring;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import it.ntt.myfirstspring.config.ComponentScanConfig;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -67,6 +70,17 @@ public class App {
         System.out.println(myCoach5.getDailyWorkout());
 
         contextAnnotations.close();
+
+        System.out.println("##########Spring config with java code#############");
+
+        AnnotationConfigApplicationContext contextJavaConfig =
+                new AnnotationConfigApplicationContext(ComponentScanConfig.class);
                 
+        Coach myCoach6 = contextJavaConfig.getBean("soccerCoach", Coach.class);
+
+        System.out.println(myCoach6.getDailyWorkout());
+
+        contextJavaConfig.close();
+        
     }
 }
